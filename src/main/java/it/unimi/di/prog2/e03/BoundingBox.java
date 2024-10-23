@@ -21,24 +21,61 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e03;
 
+import java.util.Scanner;
+
 /**
  * Vedi <a
  * href="https://github.com/mapio/labprog/blob/master/esercizi/bounding_box/Testo.md">testo</a>,
+ * 
+ * @author Corrado Francesco Emanuele
  */
 public class BoundingBox {
 
-  /** . */
-  private BoundingBox() {}
-
-  /*- Completa il seguente main
-
-  public static void main(String[] args) {
-    try (Scanner s = new Scanner(System.in)) {
-      while (s.hasNext()) {
-        final String linea = s.nextLine();
+  /**
+   * Determines the minimum dimension of a bounding box
+   * 
+   * <p>Take rows of chars "." cointaining a figure formed by "*" and determines the minimum
+   * dimension of the bounding box that contains the figure
+   * 
+   * @param args
+   */
+    public static void main(String[] args) {
+    // REQUIRES: System.in contains some line, formed by "." and "*"
+    // MODIFIES: System.in and System.out
+    // EFFECTS:  Read some line of text from System.in, each line containing "." and "*",
+    // calculates the dimension of the bounding box and writes in System.out the result
+      try (Scanner s = new Scanner(System.in)) {
+        int maxX = 0, minX = 0, maxY = 0, minY = 0, count = 1;
+        while (s.hasNext()) {
+          final String linea = s.nextLine();
+          char[] array = linea.toCharArray();
+          for (int i = 0; i < linea.length(); i++) {
+            if (array[i] == '*') {
+              if (minX == 0) {
+                maxX = i + 1;
+                minX = i + 1;
+                maxY = count;
+                minY = count;
+              }
+              if (i + 1 < minX) {
+                minX = i + 1;
+              }
+              if (i + 1 > maxX) {
+                maxX = i + 1;
+              }
+              if (count > maxY) {
+                maxY = count;
+              }
+            }
+          }
+          count++;
+        }
+        int X = maxX - minX + 1;
+        int Y = maxY - minY + 1;
+        System.out.print(Y + " " + X);
       }
-    }
   }
 
-  */
+  /** . */
+  private BoundingBox() {}
 }
