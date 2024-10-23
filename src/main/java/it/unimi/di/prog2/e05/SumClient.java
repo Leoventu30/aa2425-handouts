@@ -21,11 +21,38 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e05;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 /** Esercizio 3.2 di PDJ. */
 public class SumClient {
 
   /** . */
   private SumClient() {}
+public static void main(String[] args) throws IOException{
+    
+    ArrayList<Integer> numeri = new ArrayList<Integer>();
+    /*
+     * non capisco come vengono passati i dati perchè non sono in input quindi non va lo scan
+     * provando a fare args[0] e poi splittarlo non va
+     */
+    for(int i=0;i<args.length;i++){
+      Integer numero = Integer.parseInt(args[i]);
+      numeri.add(numero);
+    }
+    SumClient sumClient = new SumClient();
+    System.out.println(sumClient.somma(numeri).toString());
+  }
+
+
+  private Integer somma(ArrayList<Integer> numeri){
+    Integer somma=0;
+    for(int i=0;i<numeri.size();i++){
+      somma= somma + numeri.get(i);
+    }
+    return somma;
+  }
+
 
   // Aggiunga qui un main che invochi il metodo sum (che può sviluppare in
   // questa o altra classe) descritto dall'esercizio 3.2 di PDJ.

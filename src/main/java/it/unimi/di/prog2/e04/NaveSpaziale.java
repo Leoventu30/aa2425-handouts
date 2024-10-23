@@ -20,23 +20,46 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 package it.unimi.di.prog2.e04;
-
-/**
- * Vedi <a
- * href="https://github.com/mapio/labprog/blob/master/esercizi/nave_spaziale/Testo.md">testo</a>.
- */
 public class NaveSpaziale {
+  private int inizio, fine;
+  private NaveSpaziale(int i, int f) {
+    this.inizio=i;
+    this.fine=f;
+  }
 
-  /** . */
-  private NaveSpaziale() {}
+  
+  
+  /** 
+   * @return String
+   */
+  private String raggiungiPosizione(){
+    String s="";
+    while (this.inizio < this.fine) {
+      if (this.fine % 2 == 1) {
+          this.fine--;
+          s+="P";
+      } else if (this.fine >= 4 * this.inizio) {
+          this.fine /= 4;
+          s+="S";
+      } else {
+          this.fine--;
+          s+="P";
+      }
+  }
+      while (this.inizio > this.fine) {
+          this.inizio--;
+          s+="P";
+      }
+            return s;
+  }
 
-  // Se String[] args è il vettore che contiene gli argomenti sulla linea
-  // di comando, potete convertire i primi due in numeri interi con le
-  // dichiarazioni (e inizializzazioni) seguenti
-  //
-  // int from = Integer.parseInt(args[0]);
-  // int to = Integer.parseInt(args[1]);
-  //
-  // non c'è bisogno di importare alcun package per poter usare Integer.
 
+
+  public static void main(String[] args){
+    int inizio = Integer.parseInt(args[0]);
+    int fine = Integer.parseInt(args[1]);
+    NaveSpaziale nave = new NaveSpaziale(inizio,fine);
+    System.out.println(nave.raggiungiPosizione());
+  }
+  
 }

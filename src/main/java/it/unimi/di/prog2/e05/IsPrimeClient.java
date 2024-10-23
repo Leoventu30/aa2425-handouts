@@ -26,7 +26,21 @@ public class IsPrimeClient {
 
   /** . */
   private IsPrimeClient() {}
-
+  private static boolean isPrime(Integer numero){
+    boolean primo = true;
+    for(int i=1; i<numero; i++){
+      if(numero%i==0 && i!=1){
+        primo = false;
+      }
+    }
+    return primo;
+  }
+  public static void main(String[] args){
+    Integer numero = Integer.parseInt(args[0]);
+    if(IsPrimeClient.isPrime(numero)){
+      System.out.println("true");
+    }else{}
+  }
   // Aggiunga qui un main che invochi il metodo isPrime (che può sviluppare in
   // questa o altra classe) descritto dall'esercizio 3.3 di PDJ.
 

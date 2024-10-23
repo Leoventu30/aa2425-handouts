@@ -25,20 +25,50 @@ package it.unimi.di.prog2.e03;
  * Vedi <a
  * href="https://github.com/mapio/labprog/blob/master/esercizi/lettera_piu_frequente/Testo.md">testo</a>,
  */
+import java.util.*;
+
+/**
+ * Vedi <a
+ * href="https://github.com/mapio/labprog/blob/master/esercizi/lettera_piu_frequente/Testo.md">testo</a>,
+ */
 public class LetteraPiùFrequente {
+  private Map<Character, Integer> elencoCaratteri;
 
-  /** . */
-  private LetteraPiùFrequente() {}
+  public LetteraPiùFrequente() {
+    elencoCaratteri = new HashMap<Character, Integer>();
+  }
 
-  /*- Completa il seguente main
-
-  public static void main(String[] args) {
-    try (Scanner s = new Scanner(System.in)) {
-      while (s.hasNext()) {
-        final String parola = s.nextLine();
+  private void conteggia(char[] array) {
+    for (int i = 0; i < array.length; i++) {
+      // System.out.println(array[i]);
+      if (this.elencoCaratteri.containsKey(array[i])) {
+        int vecchioValore = elencoCaratteri.get(array[i]);
+        int nuovoValore = vecchioValore + 1;
+        elencoCaratteri.replace(array[i], vecchioValore, nuovoValore);
+      } else {
+        if (Character.isLetter(array[i])) {
+          elencoCaratteri.put(array[i], 1);
+        }
       }
     }
   }
 
-  */
+  private Integer getMax() {
+    Collection<Integer> elencoValori = elencoCaratteri.values();
+    Integer valoreMassimo = Collections.max(elencoValori);
+    return valoreMassimo;
+  }
+
+  public static void main(String[] args) {
+    LetteraPiùFrequente lpf = new LetteraPiùFrequente();
+    try (Scanner s = new Scanner(System.in)) {
+      while (s.hasNext()) {
+        final String parola = s.nextLine();
+        char[] arrayCaratteri = parola.toCharArray();
+        lpf.conteggia(arrayCaratteri);
+      }
+      System.out.println(lpf.getMax().toString());
+    }
+  }
 }
+
