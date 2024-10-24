@@ -1,4 +1,4 @@
-# Prog2@UniMI Handouts
+# Prog2@UniMI Handouts di Francesco Corrado
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-blue.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
@@ -6,11 +6,11 @@
 Questo repository contiene gli *handout* dell'insegnamento di [Programmazione
 II](https://prog2.di.unimi.it/) del corso di laurea in
 [Informatica](https://informatica.cdl.unimi.it/it) dell'[Università degli Studi
-di Milano](http://www.unimi.it/).
+di Milano](http://www.unimi.it/). Si tratta di una copia della [repository ufficiale] (https://github.com/prog2-unimi/handouts).
 
 Il materiale di questo repository (aggiornato periodicamente) consiste nella
-collezione del *materiale didattico* prodotto dal docente sostanzialmente nella
-forma in cui si trova al termine di ciascuna lezione. Per questa ragione il suo
+collezione del *materiale didattico* prodotto dal docente e dalla soluzione o implementazione
+degli esercizi svolti dallo studente. Per questa ragione il suo
 contenuto **non è assolutamente inteso come sostituivo dei libri di testo e
 della documentazione suggerita** e in nessun caso è da ritenersi *esaustivo* e
 *privo di errori*, ma **è provvisto al solo scopo di consentire agli studenti di
