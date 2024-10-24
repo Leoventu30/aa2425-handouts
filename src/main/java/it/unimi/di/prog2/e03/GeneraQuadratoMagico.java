@@ -24,17 +24,55 @@ package it.unimi.di.prog2.e03;
 /**
  * Vedi <a
  * href="https://github.com/mapio/labprog/blob/master/esercizi/genera_quadrato_magico/Testo.md">testo</a>,
+ * 
+ * @author Corrado Francesco Emanuele
  */
 public class GeneraQuadratoMagico {
 
-  /** . */
-  private GeneraQuadratoMagico() {}
-
-  /*- Completa il seguente main
-
+  /**
+   * Generates a magic square from a number
+   * 
+   * <p>Generates a magic square of N*N given a number N from args
+   * 
+   * @param args
+   */
   public static void main(String[] args) {
+  // REQUIRES: args[0] containing an int number
+  // EFFECTS:  Reads a number N from args[0], prints the matrix with the result
+    int x = 0;
     final int N = Integer.parseInt(args[0]);
+    int[][] matrice = new int[N][N];
+    int y = N / 2;
+    matrice[x][y] = 1;
+    x = N - 1;
+    y++;
+    for (int i = 2; i <= N * N; i++) {
+      matrice[x][y] = i;
+      x--;
+      y++;
+      if (x < 0 && y > N - 1) {
+        x += 2;
+        y--;
+      }
+      if (x < 0) {
+        x = N - 1;
+      }
+      if (y > N - 1) {
+        y = 0;
+      }
+      if (matrice[x][y] != 0) {
+        x += 2;
+        y--;
+      }
+    }
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < N; j++) {
+        System.out.print(matrice[i][j] + " ");
+      }
+      System.out.print("\n");
+    }
   }
 
-  */
+  /** . */
+  private GeneraQuadratoMagico() {}
 }
