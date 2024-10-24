@@ -6,7 +6,7 @@
 Questo repository contiene gli *handout* dell'insegnamento di [Programmazione
 II](https://prog2.di.unimi.it/) del corso di laurea in
 [Informatica](https://informatica.cdl.unimi.it/it) dell'[Università degli Studi
-di Milano](http://www.unimi.it/). Si tratta di una copia della [repository ufficiale] (https://github.com/prog2-unimi/handouts).
+di Milano](http://www.unimi.it/). Si tratta di una copia della [Repository ufficiale] (https://github.com/prog2-unimi/handouts).
 
 Il materiale di questo repository (aggiornato periodicamente) consiste nella
 collezione del *materiale didattico* prodotto dal docente e dalla soluzione o implementazione
