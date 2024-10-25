@@ -13,13 +13,46 @@ Il materiale di questo repository (aggiornato periodicamente) consiste nella
 collezione del *materiale didattico* prodotto dal docente e dalla soluzione o implementazione
 degli esercizi svolti dallo studente.
 
+La situazione attuale della risoluzione degli esercizi e test può essere visualizzata [qui](build/reports/tests/test/classesJubbiotTest.html)
+
 ## Guida all'uso di Git
+
+Come è gestito Git?
+![schema](/assets/images/schema.png)
+La mia copia locale del repository è composta da tre "alberi" mantenuti da git. Il primo è la Directory di lavoro che contiene i files attuali. Il secondo è l'Index che fa da spazio di transito per i files e per finire l'HEAD che punta all'ultimo commit fatto.
 
 Ecco alcuni comandi che possono essere utili all'uso e la gestione di Git:
 
-        git init
+### Creare e clonare una repo
 
-questa è una prova
+    git init
+
+Crea una nuova repository
+
+    git clone https://github.com/IncredibleLego/handouts.git
+
+Clona la repository (sostituire il link con la repo corrispondente)
+
+### Aggiungere le modifiche effettuate
+
+    git add <nomefile>
+    git add .
+Aggiungi uno specifico file con il `nomefile` oppure tutti i file usando `.`
+
+    git commit -m Messaggio per la commit
+Carica il file correttamente nell'HEAD (non ancora nella repo). Il messaggio contenuto in `Messaggio per la commit` è il messaggio che poi comparirà come descrizione delle modifiche effettuate
+
+    git push
+Carica infine le modifiche effettuate alla repo
+
+### Aggiornare le repo
+
+    git pull
+Aggiorna la repo locale all'ultima versione: fa un **fetch** delle modifiche dal server remoto e un **merge** cona la repo locale, scaricando ed incorporando in locale eventuali modifiche effettuate
+
+Ulteriori comandi e materiali possono essere trovati al seguente [link](https://rogerdudler.github.io/git-guide/index.it.html)
+
+
 
 
 ## Scaricare in locale il materiale
@@ -27,39 +60,21 @@ questa è una prova
 Si può scaricare il file [Zip](https://github.com/prog2-unimi/handouts/archive/master.zip) del contenuto
 di questo repository usando il link in questa frase, oppure il bottone verde "Clone or download" in altro a destra nella pagina dove sta leggendo questo `README.md`.
 
-Al fine di consentire l'automazione di alcuni compiti, tra i quali la
-**compilazione**, l'**esecuzione dei test** *black-box*  la **generazione della
-documentazione**, questo materiale fa uso di un *build automation tool*
-denominato [Gradle](https://gradle.org/) unitamente al *testing framework*
-[Jubbiot](https://github.com/prog2-unimi/jubbiot) basato su
-[JUnit](https://junit.org/junit5/). 
-
-Una *conoscenza approfondita del funzionamento di tali strumenti non è affatto
-necessaria per lo svolgimento degli esercizi, o per il superamento dell'esame*,
-perché sono completamente predisposti e configurati dal docente, come illustrato
-nelle sezioni seguenti.
-
-L'unica cosa che è necessario fare è **installare il *Java Developer Kit*
-(JDK)** in una versione sufficientemente recente (la configurazione provvederà
-poi ad installre automaticamente sia la versione 21 del JDK che Gradle e
-Jubbiot/JUnit).
-
-### Come compilare ed eseguire i test e il codice
+## Come compilare ed eseguire i test e il codice
 
 Una volta ottenuta una copia locale può procedere a **compilare** il codice con
 il comando:
 
     ./gradlew build
+    ./gradlew test
 
-se usa una ragionevole versione di GNU/Linux, oppure se usa Windows (qui e di
-seguito) può sostituire `./gradlew` con `gradlew.bat`; questo comando provvederà
+Su GNU/Linux, oppure se si usa Windows usare `./gradlew` con `gradlew.bat`; questo comando provvederà
 anche ad eseguire tutti i **test** specificati nella directory `tests`.
 
-Può eseguire il codice di una specifica classe, ad esempio
+Si può eserguire il codice di una specifica classe, ad esempio
 `it.unimi.di.prog2.h02.SalveMondo` con il comando
 
     ./gradlew runClass -PmainClass=it.unimi.di.prog2.h02.SalveMondo
-
 Per maggiori informazioni sul **funzionamento dei test** consulti l'[esempio d'uso di
 Jubbiot](https://github.com/prog2-unimi/jubbiot/blob/master/README.md#example);
 in particolare presti attenzione alla sezione sulla [generazione degli output
@@ -67,35 +82,14 @@ dello studente](https://github.com/prog2-unimi/jubbiot/blob/master/README.md#gen
 
 ### Come generare la documentazione
 
-Può generare la documentazione in locale con il comando:
+La ocumentazione può essere generata in locale con il comando:
 
     ./gradlew javadoc
 
-tale comando è configurato per riportare un errore in caso di *warning*, al fine
-di aiutarla nel comprendere se la documentazione è, almeno dal punto di vista
-sintattico, completa.
+Tale comando è configurato per riportare un errore in caso di *warning*, per aiutare a comprendere se la documentazione è, almeno dal punto di vista sintattico, completa.
 
 È possibile accedere direttamente ad una copia già compilata della
 [documentazione del codice in questo repository](https://prog2-unimi.github.io/handouts/).
-
-### Approcci alternativi
-
-Chi non intendesse usare il *build automation tool* può comunque compilare ed
-eseguire il codice e i test, nonché generare la documentazione, usando la linea
-di comando, oppure un IDE a sua scelta.  
-
-> **NOTA BENE**: *nel caso del progetto* non sarà valutato alcun codice che
-> presenti *errori* (o *warning*) di compilazione (sia nella parte di *Java* che
-> di *Javadoc*).
->
-> Per questa ragione si consiglia, qualora si decida di usare gli usuali comandi
-> del JDK, di aggiungere sempre le opzioni `-Xlint:all -Werror` al comando
-> `javac` e `-Xdoclint:all -Werror` al comando `javadoc` (sia da riga di comando
-> che attraverso l'IDE scelto).
-
-È del tutto evidente che **il docente non fornirà alcun supporto per l'uso di
-approcci differenti** da quello basato sul *build automation tool*. suggerito e
-preconfigurato.
 
 ## Materiale Anni Passati
 
@@ -104,3 +98,5 @@ preconfigurato.
 * branch dell'[AA 2021/22](../../tree/aa2122),
 * branch dell'[AA 2022/23](../../tree/aa2223),
 * branch dell'[AA 2023/24](../../tree/aa2324).
+
+[comment]: <> (Per modificare il file con l'anteprima premere CTRL + Shift + V)
