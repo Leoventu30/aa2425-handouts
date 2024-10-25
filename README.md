@@ -6,25 +6,26 @@
 Questo repository contiene gli *handout* dell'insegnamento di [Programmazione
 II](https://prog2.di.unimi.it/) del corso di laurea in
 [Informatica](https://informatica.cdl.unimi.it/it) dell'[Università degli Studi
-di Milano](http://www.unimi.it/). Si tratta di una copia della [Repository ufficiale](https://github.com/prog2-unimi/handouts).
-
-[IMPORTANTE](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+di Milano](http://www.unimi.it/). Si tratta di una copia della [Repository ufficiale](https://github.com/prog2-unimi/handouts) del prof. Questa repository
+è stata creata con lo scopo di allenarsi ad usare Git.
 
 Il materiale di questo repository (aggiornato periodicamente) consiste nella
 collezione del *materiale didattico* prodotto dal docente e dalla soluzione o implementazione
-degli esercizi svolti dallo studente. Per questa ragione il suo
-contenuto **non è assolutamente inteso come sostituivo dei libri di testo e
-della documentazione suggerita** e in nessun caso è da ritenersi *esaustivo* e
-*privo di errori*, ma **è provvisto al solo scopo di consentire agli studenti di
-ripercorrere i passi visti a lezione e suggerire alcuni esercizi**.
+degli esercizi svolti dallo studente.
 
-## Come ottenere ed utilizzare questo materiale sul proprio computer
+## Guida all'uso di Git
 
-Può scaricare un [archivio
-zip](https://github.com/prog2-unimi/handouts/archive/master.zip) del contenuto
-di questo repository usando il link in questa frase, oppure il bottone verde
-"Clone or download" in altro a destra nella pagina dove sta leggendo questo
-`README.md`.
+Ecco alcuni comandi che possono essere utili all'uso e la gestione di Git:
+
+        git init
+
+questa è una prova
+
+
+## Scaricare in locale il materiale
+
+Si può scaricare il file [Zip](https://github.com/prog2-unimi/handouts/archive/master.zip) del contenuto
+di questo repository usando il link in questa frase, oppure il bottone verde "Clone or download" in altro a destra nella pagina dove sta leggendo questo `README.md`.
 
 Al fine di consentire l'automazione di alcuni compiti, tra i quali la
 **compilazione**, l'**esecuzione dei test** *black-box*  la **generazione della
@@ -96,10 +97,7 @@ di comando, oppure un IDE a sua scelta.
 approcci differenti** da quello basato sul *build automation tool*. suggerito e
 preconfigurato.
 
-## Il materiale degli scorsi anni accademici
-
-Gli studenti che hanno frequentato nei precedenti anno accademici possono
-trovare il materiale nel
+## Materiale Anni Passati
 
 * branch dell'[AA 2019/20](../../tree/aa1920),
 * branch dell'[AA 2020/21](../../tree/aa2021),
