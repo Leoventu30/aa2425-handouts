@@ -21,13 +21,66 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e04;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Vedi <a
  * href="https://github.com/mapio/labprog/blob/master/esercizi/saltapicchio/Testo.md">testo</a>, ma
  * senza il vincolo sul valore massimo per `N`.
+ * 
+ * @author Corrado Francesco Emanuele
  */
 public class Saltapicchio {
 
-  /** . */
+  /**
+   * Prints "saltapicchio" if the numeric series respects the conditions
+   * 
+   * <p>Given a value N, if all numbers given in input subtracted between them give all numbers
+   * from 1 and N-1, it prints "saltapicchio"
+   * 
+   * @param args
+   */
+  public static void main(String []args){
+    //REQUIRES: System.in
+    //MODIFIES: System.in System.out
+    //EFFECTS: Prints "saltapicchio" if all numbers given in args[] if deducted between themeselves give all values
+    //from 1 to N-1
+    int N = Integer.parseInt(args[0]);
+    try (Scanner s = new Scanner(System.in)){
+      while (s.hasNext()){
+        boolean check = true;
+        int[] risultati = new int[N-1];
+        int[] array = new int[N];
+        String linea = s.nextLine();
+        String[] valori = linea.split(" ");
+        for (int i=0; i < N; i++){
+          array[i] = Integer.parseInt(valori[i]);
+        }
+        for (int i=0; i < N-1; i++){
+          risultati[i] = Math.abs(array[i] - array[i+1]);
+        }
+        Arrays.sort(risultati);
+        for (int i=0; i < N-1; i++){
+          if (i==0){
+            if (risultati[i] != 1){
+              check = false;
+              break;
+            }
+          }else{
+            if (risultati[i] != risultati[i-1]+1){
+              check = false;
+              break;
+            }
+          }
+        }
+        if (check){
+          System.out.print("saltapicchio");
+        }
+      }
+    }
+  }
+
+  /** . */ 
   private Saltapicchio() {}
 }
