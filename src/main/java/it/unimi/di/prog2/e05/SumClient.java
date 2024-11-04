@@ -21,8 +21,48 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e05;
 
-/** Esercizio 3.2 di PDJ. */
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/** Esercizio 3.2 di PDJ.
+ * 
+ * @author Corrado Francesco Emanuele
+ */
 public class SumClient {
+
+  /**
+   * Sums the elements of a int[] array and returns the result
+   * 
+   * @param a an array of int
+   * @return sum of the values of a
+   */
+
+  public static int sum (int[] a){
+    //MODIFIES: result
+    //EFFECTS: Sums all the elements of a and saves the result in result
+    int s=0;
+    for (int i=0; i < a.length; i++){
+      s += a[i];
+    }
+    return s;
+  }
+
+  public static void main(String[] args) {
+    ArrayList<String> valueList = new ArrayList<>();
+    try (Scanner s = new Scanner(System.in)){
+      while (s.hasNextLine()){
+        String number = s.nextLine();
+        valueList.add(number);
+      }
+    }
+    String[] values = valueList.toArray(String[]::new);
+      int[] numbers = new int[values.length];
+      for (int i=0; i < values.length; i++){
+        numbers[i] = Integer.parseInt(values[i]);
+      }
+      int result = sum(numbers);
+      System.out.println(result);
+  }
 
   /** . */
   private SumClient() {}
