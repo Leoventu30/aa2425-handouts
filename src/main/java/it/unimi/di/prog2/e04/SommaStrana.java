@@ -32,10 +32,17 @@ import java.util.Scanner;
  * @author Corrado Francesco Emanuele
  */
 public class SommaStrana {
-  //REQUIRES: System.in, System.out
-  //MODIFIES:
-  //EFFECTS:
+  /**
+   * Makes a Strange Sum Between two numbers
+   * 
+   * <p> Takes two numbers and sums them in colon, but when the sum is >9, the sum becomes 9 - result
+   * 
+   * @param args
+   */
   public static void main(String[] args){
+    //REQUIRES: System.in, System.out
+    //MODIFIES: System.out
+    //EFFECTS: Gets two numbers in input and sums them with a "StrangeSum" method
     String[] valori = new String[2];
     int x=0;
     try (Scanner s = new Scanner(System.in)) {
