@@ -21,9 +21,6 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e05;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /** Esercizio 3.2 di PDJ.
  * 
  * @author Corrado Francesco Emanuele
@@ -38,8 +35,7 @@ public class SumClient {
    */
 
   public static int sum (int[] a){
-    //MODIFIES: result
-    //EFFECTS: Sums all the elements of a and saves the result in result
+    //EFFECTS: Returns the sum of all elements in the array
     int s=0;
     for (int i=0; i < a.length; i++){
       s += a[i];
@@ -47,21 +43,41 @@ public class SumClient {
     return s;
   }
 
+  /**
+   * Returns an array with the String passed added ad int
+   * 
+   * <p>Returns the array a, with added elem converted in int at the end
+   * 
+   * @param a initial array
+   * @param elem element to add
+   * @return a with elem added
+   */
+  public static int[] add(int[] a, String elem){
+    //EFFECTS: Adds the integer representation of value to the array and returns the new array
+    int l = a.length;
+    int newArray[] = new int[l + 1];
+    System.arraycopy(a, 0, newArray, 0, l);
+    newArray[l] = Integer.parseInt(elem);
+    return newArray;
+  }
+
+  /**
+   * Gets an array of values and converts them
+   * 
+   * <p> Converts an array of strings in ints, passes the ints array to a functions that sums them and prints the result
+   * 
+   * @param args
+   */
   public static void main(String[] args) {
-    ArrayList<String> valueList = new ArrayList<>();
-    try (Scanner s = new Scanner(System.in)){
-      while (s.hasNextLine()){
-        String number = s.nextLine();
-        valueList.add(number);
-      }
+    //EFFECTS: converts the args array in ints and prints the elements
+    int[] numbers={};
+    String[] values = new String[args.length];
+    System.arraycopy(args, 0, values, 0, args.length);
+    for (String value : values) {
+        numbers = add(numbers, value);
     }
-    String[] values = valueList.toArray(String[]::new);
-      int[] numbers = new int[values.length];
-      for (int i=0; i < values.length; i++){
-        numbers[i] = Integer.parseInt(values[i]);
-      }
-      int result = sum(numbers);
-      System.out.println(result);
+    int result = sum(numbers);
+    System.out.println(result);
   }
 
   /** . */
