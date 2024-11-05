@@ -21,8 +21,13 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e05;
 
-/** Esercizio 3.1 di PDJ. */
+/** Esercizio 3.1 di PDJ.
+ * 
+ * @author Corrado Francesco Emanuele
+ */
 public class GcdClient {
+
+
 
   /** . */
   private GcdClient() {}

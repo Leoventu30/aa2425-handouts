@@ -53,7 +53,7 @@ Aggiorna la repo locale all'ultima versione: fa un **fetch** delle modifiche dal
 
 Ulteriori comandi e materiali possono essere trovati al seguente [link](https://rogerdudler.github.io/git-guide/index.it.html)
 
-
+![schema](/assets/images/GitWorkflow.png)
 
 
 ## Scaricare in locale il materiale
