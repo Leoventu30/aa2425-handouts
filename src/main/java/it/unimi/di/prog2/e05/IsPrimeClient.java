@@ -21,8 +21,44 @@ along with this file.  If not, see <https://www.gnu.org/licenses/>.
 
 package it.unimi.di.prog2.e05;
 
-/** Esercizio 3.3 di PDJ. */
+/** Esercizio 3.3 di PDJ.
+ * 
+ * @author Corrado Francesco Emanuele
+ */
 public class IsPrimeClient {
+
+  /**
+   * Returns true if the input is a prime number, else false
+   * 
+   * @param x int number
+   * @return true if x is prime, else false
+   */
+  public static boolean isPrime(int x){
+    //EFFECTS: returns true if x is prime, else returns false
+    if (x <= 1){
+      return false;
+    }
+    for (int i=2; i < x; i++){
+      if (x % i == 0){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Gets a number from args and passes it to a function. Prints result
+   * 
+   * @param args
+   */
+  public static void main(String[] args) { 
+    //EFFECTS: creates a variable num from converting input in int and passes it to the isPrime function, printing the result in case it is positive
+      int num = Integer.parseInt(args[0]);
+      boolean result = isPrime(num);
+      if (result){
+        System.out.println(result);
+      }
+  }
 
   /** . */
   private IsPrimeClient() {}
@@ -32,5 +68,4 @@ public class IsPrimeClient {
 
   // Il main riceve un intero come parametro sulla linea di comando ed emette
   // "true" nel flusso d'uscita se e solo se esso è primo.
-
 }
