@@ -77,7 +77,6 @@ public class GcdClient {
         System.out.println(result);
       }
     }
-      
   }
 
   /** . */
@@ -88,5 +87,4 @@ public class GcdClient {
 
   // Il main legge dal flusso di ingresso coppie di numeri ed emette nel flusso
   // d'uscita il loro gcd.
-
 }
